@@ -5,6 +5,22 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+        Players m = new Players("Must", 123, 32);
+        System.out.println(m.toString());
+        saveObject(m);
+
+        m.setHitPoints(4);
+        System.out.println(m);
+        m.setWeapon("aaaaaa");
+        saveObject(m);
+        loadObject(m);
+
+
+        //monster class
+        ISaveable wereWolf = new Monster("Wolf", 123, 1);
+        System.out.println(wereWolf);
+        saveObject(wereWolf);
+        loadObject(wereWolf);
 
     }
 
