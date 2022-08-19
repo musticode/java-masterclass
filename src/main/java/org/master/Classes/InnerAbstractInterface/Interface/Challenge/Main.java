@@ -13,12 +13,16 @@ public class Main {
         System.out.println(m);
         m.setWeapon("aaaaaa");
         saveObject(m);
-        loadObject(m);
+        //loadObject(m);
 
 
         //monster class
         ISaveable wereWolf = new Monster("Wolf", 123, 1);
         System.out.println(wereWolf);
+
+        //casting interface to class
+        System.out.println("Strength of monster (cast) : "+((Monster) wereWolf).getStrength());
+
         saveObject(wereWolf);
         loadObject(wereWolf);
 
