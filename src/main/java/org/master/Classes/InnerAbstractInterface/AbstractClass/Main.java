@@ -10,7 +10,11 @@ public class Main {
         Parrot parrot = new Parrot("Parrot");
         parrot.breathe();
         parrot.eat();
-        parrot.fly();
+        parrot.canFly();
+
+        Penguin penguin = new Penguin("peng");
+        penguin.canFly();
+
 
 
     }
