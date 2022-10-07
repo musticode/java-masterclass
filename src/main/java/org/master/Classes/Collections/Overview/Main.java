@@ -41,12 +41,15 @@ public class Main {
 
 
         List<Seat> priceSeats = new ArrayList<>(theatre1.seats);
+
         priceSeats.add(new Seat("BOO", 13.00));
         priceSeats.add(new Seat("AOO", 13.00));
         Collections.sort(priceSeats, Theatre.PRICE_ORDER);
         printList(priceSeats);
 
-
+        priceSeats.forEach(
+                (seat) -> System.out.println(seat.getSeatNumber()+ ", price: "+ seat.getPrice())
+        );
 
 
     }
