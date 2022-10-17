@@ -33,4 +33,26 @@ public class HeavenlyBody {
 
 
 
+    public boolean equals(HeavenlyBody obj ){
+        if (this == obj){
+            return true;
+        }
+        System.out.println("obj.getClass() " + obj.getClass());
+        System.out.println("this.getClass() " + this.getClass());
+        if ((obj == null) || (this.getClass() != obj.getClass())) {
+            return false;
+        }
+        String objName = ((HeavenlyBody)obj).getName();
+        return this.name.equals(objName);
+    }
+
+
+    //hashcode
+    public int hashCode(){
+        System.out.println("hashcode called ");
+        return this.name.hashCode() + 57;
+    }
+
+
 }
+
