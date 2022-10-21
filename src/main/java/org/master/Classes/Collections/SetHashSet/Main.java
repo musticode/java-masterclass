@@ -7,42 +7,43 @@ import java.util.Set;
 
 public class Main {
 
-    private static Map<String, HeavenlyBody> solarSystem = new HashMap<>();
+    private static Map<HeavenlyBody.Key, HeavenlyBody> solarSystem = new HashMap<>();
     private static Set<HeavenlyBody> planets = new HashSet<>();
 
     public static void main(String[] args) {
+
         HeavenlyBody temp = new Planet("Mercury", 88);
-        solarSystem.put(temp.getName(), temp);
+        solarSystem.put(temp.getKey(), temp);
         planets.add(temp);
 
         temp = new Planet("Venus", 255);
-        solarSystem.put(temp.getName(), temp);
+        solarSystem.put(temp.getKey(), temp);
         planets.add(temp);
 
         temp = new Planet("Earth", 465);
-        solarSystem.put(temp.getName(), temp);
+        solarSystem.put(temp.getKey(), temp);
         planets.add(temp);
 
         HeavenlyBody tempMoon = new Moon("Moon", 27);
-        solarSystem.put(tempMoon.getName(), tempMoon);
+        solarSystem.put(tempMoon.getKey(), tempMoon);
         temp.addSatellite(tempMoon);
 
         temp = new Planet("Mars", 687);
-        solarSystem.put(temp.getName(), temp);
+        solarSystem.put(temp.getKey(), temp);
         planets.add(temp);
 
         tempMoon = new Moon("Callisto", 27);
-        solarSystem.put(tempMoon.getName(), tempMoon);
+        solarSystem.put(tempMoon.getKey(), tempMoon);
         temp.addSatellite(tempMoon);
 
 
         tempMoon = new Moon("Moon", 27);
-        solarSystem.put(tempMoon.getName(), tempMoon);
+        solarSystem.put(tempMoon.getKey(), tempMoon);
         temp.addSatellite(tempMoon);
 
 
        tempMoon = new Moon("Moon", 27);
-        solarSystem.put(tempMoon.getName(), tempMoon);
+        solarSystem.put(tempMoon.getKey(), tempMoon);
         temp.addSatellite(tempMoon);
 
         for (HeavenlyBody planet: planets){
