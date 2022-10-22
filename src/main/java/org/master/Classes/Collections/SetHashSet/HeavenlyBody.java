@@ -127,6 +127,14 @@ public abstract class HeavenlyBody {
             return this.name.hashCode() + 57 + this.bodyType.hashCode();
         }
 
+        @Override
+        public String toString() {
+            return "Key{" +
+                    "name='" + name + '\'' +
+                    ", bodyType=" + bodyType +
+                    '}';
+        }
+
     }
 
 

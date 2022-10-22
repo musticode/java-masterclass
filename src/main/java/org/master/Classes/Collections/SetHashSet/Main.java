@@ -42,9 +42,20 @@ public class Main {
         temp.addSatellite(tempMoon);
 
 
-       tempMoon = new Moon("Moon", 27);
+        tempMoon = new Moon("Moon", 27);
         solarSystem.put(tempMoon.getKey(), tempMoon);
         temp.addSatellite(tempMoon);
+
+        //get key heavenlyBody
+        Set<HeavenlyBody> moons = new HashSet<>();
+        for (HeavenlyBody planet: planets){
+            moons.addAll( planet.getSatellites());
+        }
+
+        System.out.println("All moons");
+        for (HeavenlyBody moon: moons){
+            System.out.println("\t"+moon.getKey()/*.getName()*/);
+        }
 
         for (HeavenlyBody planet: planets){
             System.out.println(planet);
