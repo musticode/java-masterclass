@@ -76,7 +76,15 @@ public class Main {
 
 
 
+        solarSystem.put(pluto.getKey(), pluto);
+        System.out.println(solarSystem.get(HeavenlyBody.makeKey("Pluto", HeavenlyBody.BodyTypes.PLANET)));
+        System.out.println(solarSystem.get(HeavenlyBody.makeKey("Pluto", HeavenlyBody.BodyTypes.DWARF_PLANET)));
 
+        System.out.println();
+        System.out.println("The solar system contains");
+        for (HeavenlyBody heavenlyBody: solarSystem.values()){
+            System.out.println(heavenlyBody);
+        }
 
 /*
         HeavenlyBody temp = new HeavenlyBody("Mercury", 88);

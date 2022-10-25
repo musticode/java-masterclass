@@ -130,8 +130,8 @@ public abstract class HeavenlyBody {
         @Override
         public String toString() {
             return "Key{" +
-                    "name='" + name + '\'' +
-                    ", bodyType=" + bodyType +
+                    "name='" + this.name + '\'' +
+                    ", bodyType=" + this.bodyType +
                     '}';
         }
 
