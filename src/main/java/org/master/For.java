@@ -80,18 +80,173 @@ public class For {
         System.out.println(time2("01:05:45PM"));
 
         System.out.println("A very big sum problem");
-        List<Long> veryBigSum = new ArrayList<>();
+        List<Integer> veryBigSum = new ArrayList<>();
         //1000000001 1000000002 1000000003 1000000004 1000000005
-        veryBigSum.add(1000000001L);
-        veryBigSum.add(1000000002L);
-        veryBigSum.add(1000000003L);
-        veryBigSum.add(1000000004L);
-        veryBigSum.add(1000000005L);
+        veryBigSum.add(1001);
+        veryBigSum.add(1002);
+        //veryBigSum.add(Long.valueOf(1000000003));
+        //veryBigSum.add(Long.valueOf(1000000004));
+        //veryBigSum.add(Long.valueOf(1000000005));
         //5000000015
 
         //System.out.println(aVeryBigSum(veryBigSum));
 
+        System.out.println("Big sorting ");
+        List<String> listToSort = new ArrayList<>();
+        listToSort.add("6");
+        listToSort.add("31415926535897932384626433832795"); //5926535897932384626433832795
+        listToSort.add("1");
+        listToSort.add("3");
+        listToSort.add("10");
+        listToSort.add("3");
+        listToSort.add("5");
+
+        //System.out.println(bigSorting(listToSort));
+
+
+        System.out.println("Plus minus");
+        List<Integer> plusMinusTestArr = new ArrayList<>();
+        plusMinusTestArr.add(1);
+        plusMinusTestArr.add(1);
+        plusMinusTestArr.add(0);
+        plusMinusTestArr.add(-1);
+        plusMinusTestArr.add(-1);
+
+        plusMinus(plusMinusTestArr);
+
+
+
     }
+
+
+    public static void plusMinus(List<Integer> arr) {
+        // Write your code here
+        double oneRatio= 0;
+        int minusRatio = 0;
+        int zeroRatio = 0;
+
+        int oneSum = 0;
+        int minusSum = 0;
+        int zeroSum = 0;
+        for (int a = 0; a < arr.size(); a++){
+            if (arr.get(a) >= 1){
+                oneSum++;
+                //System.out.println(oneSum);
+            }else if (arr.get(a) <= -1){
+                minusSum++;
+            }else if (arr.get(a) == 0){
+                zeroSum++;
+            }
+        }
+         // 2 / 5;
+
+        oneRatio = oneSum / arr.size();
+        System.out.println(String.format("%.6f",oneRatio));
+
+
+        System.out.println("Grading students: ");
+        List<Integer> gradeList = new ArrayList<>();
+        gradeList.add(84);
+        gradeList.add(82);
+        gradeList.add(79);
+        gradeList.add(73);
+        gradeList.add(38);
+
+
+        gradingStudents(gradeList);
+        for (int grades: gradeList){
+            System.out.println(grades);
+        }
+
+
+
+    }
+
+
+    public static List<Integer> gradingStudents(List<Integer> grades) {
+        // Write your code here
+        int gradeDifference = 3;
+
+
+        for (int i = 0; i < grades.size(); i++){
+            if (grades.get(i) < 37  ){
+
+            }else if (grades.get(i) % 5 >= 3 ){  //4<3 --> 16*5 = 80 + 5,,,,,, 2
+                //bölüm x 5 + kalan
+                //int remainder = grades.get(i) % 5;
+                int bol = grades.get(i) / 5;
+
+                //System.out.println(bol + " " + bol*5); //16 * 5
+                //System.out.println(bol * 5 );
+                grades.set(i,(bol*5 + 5));
+            }
+
+        }
+        return grades;
+    }
+
+
+
+
+
+
+
+
+    public static void printList(List<Integer> unsortedIntegerList){
+        //integer list print
+        for (int i = 0; i < unsortedIntegerList.size(); i++){
+            System.out.println(unsortedIntegerList.get(i));
+        }
+    }
+
+    public static List<String> bigSorting(List<String> unsorted) {
+        // Write your code here
+
+        List<Integer> unsortedIntegerList = new ArrayList<>();
+        int[] arr = new int[unsorted.size()];
+
+
+        //String list to integerlist
+        for (int i = 0; i < unsorted.size(); i++){
+            if (Integer.parseInt(unsorted.get(i)) < Integer.MAX_VALUE ){
+                unsortedIntegerList.add(Integer.parseInt(unsorted.get(i)));
+            }else{
+                unsortedIntegerList.add((int) Long.parseLong(unsorted.get(i)));
+                //Long.parseLong(unsorted.get(i))
+            }
+
+        }
+
+        for (int i = 0; i < arr.length; i++){
+            arr[i] = unsortedIntegerList.get(i);
+        }
+
+
+        for (int i = 0; i < arr.length; i++){
+            //point 1 head
+            for (int j = i + 1; j < arr.length; j++){
+
+                //swapping
+                int temp = 0;
+                if (arr[j] < arr[i]){
+                    temp = arr[i];
+                    arr[i] = arr[j];
+                    arr[j] = temp;
+                }
+            }
+        }
+
+
+        for (int i = 0; i < arr.length; i++){
+            unsorted.set(i, Integer.toString(arr[i]));
+        }
+
+        return unsorted;
+
+
+
+    }
+
 
 
     public static String time2(String s){
@@ -323,18 +478,18 @@ public class For {
 
 
 
-    public static long aVeryBigSum(List<Long> ar) {
+    public static long aVeryBigSum(List<Integer> ar) {
         // Write your code here
-        long sumOfArrayElements = 0;
+        long firstElementSum = 0;
+        long lastElementSum = 0;
 
-        for (int i = 0; i < ar.size(); i++){
-            sumOfArrayElements = ar.get(i) + sumOfArrayElements;  // 0 1+0
-
+        for (long a : ar){
+            lastElementSum = lastElementSum + ar.get((int) a) / 10;
 
         }
 
 
-        return 0;
+        return lastElementSum;
     }
 
 
