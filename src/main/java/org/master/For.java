@@ -112,11 +112,130 @@ public class For {
         plusMinusTestArr.add(-1);
         plusMinusTestArr.add(-1);
 
-        plusMinus(plusMinusTestArr);
+        plusMinus2(plusMinusTestArr);
 
+
+        System.out.println(superReducedString("aabaabb"));
+    }
+
+    public static String superReducedString(String s) {
+        // Write your code here
+        char adjacent = 'a';
+        String newString= "";
+
+        char [] arr = new char[s.length()];
+        char [] newArr = new char[s.length()];
+
+        for (int i = 0; i < s.length(); i++){
+            arr[i] = s.charAt(i);
+        }
+
+        for (int i = 0; i < arr.length-1; i++){
+            if (arr[i] == arr[i+1]){
+                System.out.println(arr[i]);
+                //
+                newArr[i] = arr[i];
+            }
+        }
+
+
+        //print
+        for (int i = 0; i < arr.length; i++){
+            //System.out.println(arr[i]);
+        }
+
+        return newString;
+
+    }
+
+
+
+
+
+
+
+    public static List<Integer> breakingRecords(List<Integer> scores) {
+        // Write your code here
+        List<Integer> result = new ArrayList<>();
+
+        int min = 0;
+        int max = 0;
+
+        int minCount =0;
+        int maxCount = 0;
+
+        for (int i = 0; i < scores.size(); i++){
+            if (scores.get(i) < scores.get(i+1)){
+                min = scores.get(i);
+                minCount++;
+            }else if (scores.get(i) > scores.get(i+1)){
+                max = scores.get(i);
+                maxCount++;
+            }
+        }
+
+
+
+        return result;
+    }
+
+
+    public static String kangaroo(int x1, int v1, int x2, int v2) {
+        // Write your code here
+
+
+        int firstSequence = Math.abs(v1 - x1);
+        int secondSequence = Math.abs(v2 - x2);
+
+
+        //ekok 0 3 --- 4 2
+        //      3 ----- 2  3*2 = 6, 6/3=2 - 6/2=3, (((( 12-0/3=4 - 12-4/2=4 ))))
+        int ekok = firstSequence * secondSequence; //3 2
+        int çarpım = 0;
+
+        return "YES";
+
+    }
+
+
+
+    public static void plusMinus2(List<Integer> arr){
+        double positiveRatio = 0;
+        double negativeRatio = 0;
+        double zeroRatio = 0;
+
+        double positiveSum = 0;
+        double negativeSum = 0;
+        double zeroSum = 0;
+
+        for (int i = 0; i < arr.size(); i++){
+
+            if (arr.get(i) < -100 && arr.get(i) > 100){
+
+            }
+            if (arr.size() > 0 && arr.size() < 100){
+
+            }
+
+            if (arr.get(i) > 0){
+                positiveSum++;
+            }else if (arr.get(i) == 0){
+                zeroSum++;
+            }else if (arr.get(i) < 0){
+                negativeSum++;
+            }
+        }
+
+        positiveRatio = positiveSum / arr.size();
+        negativeRatio = negativeSum / arr.size();
+        zeroRatio = zeroSum / arr.size();
+
+        System.out.println(String.format("%.6f",positiveRatio) + "\n" + String.format("%6f", negativeRatio) + "\n" + String.format("%6f", zeroRatio) );
 
 
     }
+
+
 
 
     public static void plusMinus(List<Integer> arr) {
@@ -250,9 +369,17 @@ public class For {
 
 
     public static String time2(String s){
+        String convertedHourString = "";
 
-        int hourInt = Integer.parseInt(s.substring(0,2));
+
+        //int hourInt = Integer.parseInt(s.substring(0,2));
         String hourString = s.substring(0,2);
+        int hour = Integer.parseInt(hourString);
+
+        // '12:01:00PM'.
+        //Return '12:01:00'.
+
+/*
 
         if (hourInt < 13){
             for (int i = 13; i <= 23; i++ ){
@@ -260,6 +387,9 @@ public class For {
             }
         }
         String convertedHourString = Integer.toString(hourInt);
+*/
+
+
         return convertedHourString;
 
     }
