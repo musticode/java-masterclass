@@ -37,7 +37,7 @@ public class StockItem implements Comparable<StockItem> {
     }
 
     public boolean equals(Object obj){
-        System.out.println("entering stockitem.equals");
+        System.out.println("entering StockItem.equals");
         if (obj == this){
             return true;
         }
@@ -50,9 +50,28 @@ public class StockItem implements Comparable<StockItem> {
         return this.name.equals(objName);
     }
 
+    @Override
+    public int hashCode(){
+        return super.hashCode() + 31;
+    }
 
     @Override
     public int compareTo(StockItem o) {
-        return 0;
+        System.out.println("entering StockItem.compareTo");
+        if (this == o ){
+            return 0;
+        }
+
+        if (o != null){
+            return this.name.compareTo(o.getName());
+        }
+        //null cant be compared
+        throw new NullPointerException();
     }
+
+    public String toString(){
+        return this.name + " : price " + this.price;
+    }
+
+
 }
