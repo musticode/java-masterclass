@@ -5,8 +5,45 @@ import java.util.Collections;
 import java.util.Iterator;
 
 public class Main {
+    private static StockList stockList = new StockList();
 
     public static void main(String[] args) {
+        //stock item
+        StockItem temp = new StockItem("bread", 0.86);
+        stockList.addStock(temp);
+
+        temp = new StockItem("cake", 1.10);
+        stockList.addStock(temp);
+
+        temp = new StockItem("car", 1.10);
+        stockList.addStock(temp);
+
+        temp = new StockItem("cup  ", 1.10);
+        stockList.addStock(temp);
+
+        temp = new StockItem("chair", 1.10);
+        stockList.addStock(temp);
+
+        temp = new StockItem("door", 1.10);
+        stockList.addStock(temp);
+
+        temp = new StockItem("phone", 1.10);
+        stockList.addStock(temp);
+
+        temp = new StockItem("towel", 1.10);
+        stockList.addStock(temp);
+
+        temp = new StockItem("vase", 1.10);
+        stockList.addStock(temp);
+
+
+        System.out.println(stockList);
+
+        for (String s : stockList.Items().keySet()){
+            System.out.println(s);
+        }
+
+
 
 
         //collections google search
