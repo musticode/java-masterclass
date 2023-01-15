@@ -38,7 +38,40 @@ public class MinesWeeper {
          * Burada bomba yerleştirdikten sonra hemen bombasız kalan diğer hücrelerin komşu hücrelerindeki bomba sayısını hesaplayıp
          * bombInfo dizisinde oraları sayının char hali ile güncellemeniz gerekmektedir. Size bırakıyorum burayı.
          * İşin en oöenmli kısmı burası!!! Her hücreyi gezip komşularında ne kadar bomba varsa hücrenin değerini güncellemeniz gerekmektedir.
+         * gameArea = '*'
          */
+
+
+        //bomb info print
+        for (int i = 0; i < gameArea.length; i++){
+            for (int j = 0; j < gameArea.length; j++){
+                System.out.print(bombInfo[i][j]);
+            }
+            System.out.println();
+        }
+
+
+        for (int i = 0; i < gameArea.length; i++){
+            for (int j = 0; j < gameArea.length; j++){
+                int bombCount = 0;
+                if (bombInfo[i][j] == 'B'){
+                    if ((i - 1) > 0){
+                        bombInfo[i][j] = (char) bombCount;
+                        bombCount++;
+                    }
+                    if ((i + 1) < 6){
+                        bombInfo[i][j] = (char) bombCount;
+                        bombCount++;
+                    }
+
+
+
+                }
+            }
+        }
+
+
+
 
         /**
          * 1B1B21
@@ -93,6 +126,8 @@ public class MinesWeeper {
                 /**
                  * Oyun bitti
                  */
+
+                System.out.println("Game over");
             }else {
                 /**
                  * Bomba yok, oyuna devam, gameArea dizisinden buraya artık yıldız basılmamalı bundan dolayı

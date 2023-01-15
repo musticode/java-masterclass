@@ -1,4 +1,4 @@
-package org.master.DesignPatterns.Prototype;
+package org.master.designpatterns.prototype;
 
 public abstract class Shape {
     public int x;

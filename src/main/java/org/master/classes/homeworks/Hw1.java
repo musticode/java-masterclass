@@ -231,4 +231,7 @@ bekliyorum)*/
 */
 
     }
+
+    public static class Hw4 {
+    }
 }

@@ -1,4 +1,4 @@
-package org.master.DesignPatterns.Builder;
+package org.master.designpatterns.builder;
 
 public class Person {
     private String identityNumber;
