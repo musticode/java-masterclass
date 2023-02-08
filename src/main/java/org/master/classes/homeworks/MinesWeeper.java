@@ -43,6 +43,7 @@ public class MinesWeeper {
 
 
         //bomb info print
+        System.out.println("bomb info");
         for (int i = 0; i < gameArea.length; i++){
             for (int j = 0; j < gameArea.length; j++){
                 System.out.print(bombInfo[i][j]);

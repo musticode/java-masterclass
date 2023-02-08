@@ -33,12 +33,28 @@ public class Rectangle {
     }
 
     public void information(){
-
+        System.out.println("This is a rectangle");
+        System.out.println("Short edge: "+shortEdge + " Long edge: "+longEdge);
+        System.out.println("Area: "+ calculateArea(shortEdge, longEdge));
+        System.out.println("Perimeter: " + calculatePerimeter(shortEdge, longEdge));
+        print();
     }
 
     public void print(){
+//
+//        System.out.println("This is a rectangle");
+//        System.out.println("Short edge: "+shortEdge + " Long edge: "+longEdge);
+//        System.out.println("Area: "+ calculateArea(shortEdge, longEdge));
+//        System.out.println("Perimeter: " + calculatePerimeter(shortEdge, longEdge));
+
+        //printing rectangle in with *
+        for (int i = 0; i < shortEdge; i++){
+            for (int j = 0; j < longEdge; j++){
+                System.out.print("*");
+            }
+            System.out.println();
+        }
 
     }
-
 
 }

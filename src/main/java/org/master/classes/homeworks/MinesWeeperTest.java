@@ -6,34 +6,55 @@ public class MinesWeeperTest {
 
     public static void main(String[] args) {
 
-        char [][] arr = new char[4][4];
+        char[][] gameArea = new char[6][6];
+        char[][] bombInfo = new char[6][6];
 
-        for (int i = 0; i < arr.length; i++){
-            for (int j = 0; j < arr.length; j++){
-                arr[i][j]= 'a';
-                //arr[i][j]= 2;
+        /**
+         * Kullanıcıya gösterilecek oyun alanını başta *'larla doldur.
+         */
+        for(int  i = 0; i < 6; i++) {
+            for(int  j = 0; j < 6; j++) {
+                gameArea[i][j] = '*';
             }
         }
 
+        /**
+         * 8 tane rastgele yere bomba yerleştir.
+         */
+        for(int i = 0; i < 8; i++) {
+            Random r = new Random();
+            int bombaSatır = r.nextInt(6);
+            int bombaSutun = r.nextInt(6);
+            /**
+             * Burada bomba olduğunu b harfi ile belirtiyorum
+             */
+            bombInfo[bombaSatır][bombaSutun] = 'B';
+        }
 
         /**
-         *                 Random r = new Random();
-         *                 int bomb = r.nextInt(3);
-         *                 int bomb2 = r.nextInt(3);
-         *
-         *                 arr[bomb] [bomb2] = 'a';
+         * Burada bomba yerleştirdikten sonra hemen bombasız kalan diğer hücrelerin komşu hücrelerindeki bomba sayısını hesaplayıp
+         * bombInfo dizisinde oraları sayının char hali ile güncellemeniz gerekmektedir. Size bırakıyorum burayı.
+         * İşin en oöenmli kısmı burası!!! Her hücreyi gezip komşularında ne kadar bomba varsa hücrenin değerini güncellemeniz gerekmektedir.
+         * gameArea = '*'
          */
 
 
-        for (int i = 0; i < arr.length; i++){
-            for (int j = 0; j < arr.length; j++){
-                System.out.print(arr[i][j]);
+        //bomb info print
+        System.out.println("bomb info");
+        for (int i = 0; i < gameArea.length; i++){
+            for (int j = 0; j < gameArea.length; j++){
+                System.out.print(bombInfo[i][j]);
             }
-
             System.out.println();
         }
 
+        for (int i = 0; i < gameArea.length; i++){
+            for (int j = 0; j < gameArea.length; j++){
 
+
+
+            }
+        }
 
 
     }

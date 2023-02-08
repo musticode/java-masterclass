@@ -33,11 +33,16 @@ public class Triangle {
 
     public int calculatePerimeter(int verticalEdge1, int verticalEdge2){
         int h = (int) (Math.pow(verticalEdge1, 2) + Math.pow(verticalEdge2, 2));
-        return (int) Math.sqrt(h);
+
+        int perimeter =  (int) Math.sqrt(h) + verticalEdge1 + verticalEdge2;
+        return perimeter;
     }
 
     public void information(){
-
+        System.out.println("This is a triangle");
+        System.out.println("Vertical edge 1: "+verticalEdge1 + " Vertical Edge 2: "+verticalEdge2);
+        System.out.println("Area: "+ calculateArea(verticalEdge1, verticalEdge2));
+        System.out.println("Perimeter: " + calculatePerimeter(verticalEdge1, verticalEdge2));
     }
 
 
